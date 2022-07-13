@@ -1,0 +1,156 @@
+:root {
+  --Karla: "Karla", sans-serif;
+  --Inter: "Inter", sans-serif;
+  --visibility: 0;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  background: #1c1c1c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-body {
+  padding: 80px 52px 46px 52px;
+  box-sizing: border-box;
+  background: #1f2937;
+  width: 550px;
+  aspect-ratio: 1;
+  height: 550px;
+}
+
+h1 {
+  font-family: var(--Karla);
+  color: white;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+h3 {
+  margin: 10px 0;
+  font-family: var(--Inter);
+  color: #d5d4d8;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+h1 > span {
+  color: #10b981;
+}
+
+button {
+  margin: 51px 0px 31px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 17px 9px 15px;
+  gap: 12px;
+  background: #10b981;
+  border: none;
+  width: 220 px;
+  height: 42px;
+  border-radius: 6px;
+  font-family: var(--Inter);
+  color: white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+button > img {
+  width: 14px;
+  height: 18px;
+}
+
+button:hover {
+  background: #0b9869;
+}
+
+.line {
+  width: 100%;
+  border-top: 2px solid #2f3e53;
+  margin-bottom: 50px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 1fr);
+  column-gap: 24px;
+  row-gap: 50px;
+}
+
+.boxes {
+  height: 39px;
+  width: 208px;
+  background: #273549 url(./images/icon-2.svg) center center no-repeat;
+  background-size: 10%;
+  border-radius: 6px;
+  border: none;
+  font-family: var(--Inter);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  cursor: context-menu;
+  text-align: center;
+  color: #5def92;
+}
+
+.boxes:focus {
+  outline: none;
+}
+
+.boxes::selection {
+  background: #0b9869;
+  color: white;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip > .tooltiptext {
+  visibility: hidden;
+  background: #10b981;
+  font-family: var(--Inter);
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  width: 180px;
+  margin: 0 auto;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip > .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #10b981 transparent transparent transparent;
+}
+
+.tooltip:hover > .tooltiptext {
+  visibility: visible;
+  opacity: var(--visibility);
+}
